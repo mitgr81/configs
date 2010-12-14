@@ -1,1 +1,1 @@
-source .bash_aliases
+zshrc
