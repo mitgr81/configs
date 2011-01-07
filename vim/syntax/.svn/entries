@@ -1,0 +1,52 @@
+8
+
+dir
+300
+https://svn.datasyncintra.net/developers/vim/king/vim/syntax
+https://svn.datasyncintra.net/developers
+
+
+
+2009-10-06T18:41:14.807713Z
+300
+kingc
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d88c84d8-29fb-4418-8bcc-db225a48336d
+
+htmldjango.vim
+file
+
+
+
+
+2009-10-06T18:41:23.000000Z
+c182cc9b02d6c0249192e18d2ffd5aba
+2009-10-06T18:41:14.807713Z
+300
+kingc
+
+django.vim
+file
+
+
+
+
+2009-10-06T18:41:23.000000Z
+5dfe568dd9b2e5a377dc6af820c7780e
+2009-10-06T18:41:14.807713Z
+300
+kingc
+

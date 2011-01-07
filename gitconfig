@@ -1,0 +1,25 @@
+[user]
+	name = Chris McGraw
+	email = cmcgraw@datasyncorp.com
+[core]
+	editor = vim
+[merge]
+	tool = meld
+[giggle]
+	compact-mode = true
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	di = diff
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+[diff]
+	tool = meld

@@ -1,0 +1,52 @@
+8
+
+dir
+300
+https://svn.datasyncintra.net/developers/vim/king/vim/ftplugin
+https://svn.datasyncintra.net/developers
+
+
+
+2009-10-06T18:41:14.807713Z
+300
+kingc
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d88c84d8-29fb-4418-8bcc-db225a48336d
+
+matchit.vim
+file
+
+
+
+
+2009-10-06T18:41:23.000000Z
+c98bce0ab0930460dd7249b39707489a
+2009-10-06T18:41:14.807713Z
+300
+kingc
+
+xml.vim
+file
+
+
+
+
+2009-10-06T18:41:23.000000Z
+84f471f294327107798c39958851ed22
+2009-10-06T18:41:14.807713Z
+300
+kingc
+

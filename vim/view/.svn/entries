@@ -1,0 +1,52 @@
+8
+
+dir
+300
+https://svn.datasyncintra.net/developers/vim/king/vim/view
+https://svn.datasyncintra.net/developers
+
+
+
+2009-10-06T18:41:14.807713Z
+300
+kingc
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d88c84d8-29fb-4418-8bcc-db225a48336d
+
+~=+.vimrc=
+file
+
+
+
+
+2009-10-06T18:41:23.000000Z
+b4f2739c1ea3614026729c1b16dda092
+2009-10-06T18:41:14.807713Z
+300
+kingc
+
+=+data=+code=+oss=+svn=+webjungle=+jungle=+views.py=
+file
+
+
+
+
+2009-10-06T18:41:23.000000Z
+65dc306aafabb6c7b63f5f18f62abfb4
+2009-10-06T18:41:14.807713Z
+300
+kingc
+
