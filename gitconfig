@@ -1,10 +1,10 @@
 [user]
 	name = Chris McGraw
-	email = cmcgraw@datasyncorp.com
+	email = mitgr81@mitgr81.com 
 [core]
 	editor = vim
 [merge]
-	tool = meld
+	tool = opendiff 
 [giggle]
 	compact-mode = true
 	main-window-maximized = true
@@ -22,4 +22,4 @@
 	interactive = auto
 	diff = auto
 [diff]
-	tool = meld
+	tool = opendiff 
