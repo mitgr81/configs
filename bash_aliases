@@ -12,12 +12,20 @@ alias squig="ssh -X root@squigherder"
 alias serenity="ssh datasync@serenity.datasyncintra.net"
 alias ispy="ps ax | grep python"
 alias psuite='ps ax | grep "python\|nginx\|slapd"'
+
+#git / svn
+alias pull="git svn rebase"
+alias push="git svn dcommit"
 alias gbr='git branch'
 alias gst='git status'
 alias gco='git checkout'
 alias gitd='sudo git daemon --base-path=/opt/ --reuseaddr --detach'
+
+#Linux
 alias pdbot='python /usr/lib/python2.5/site-packages/robotframework-2.1.1-py2.5.egg/robot/runner.py --noncritical noncritical --exclude notimplemented -L DEBUG'
 alias macterm='export TERM=xterm-color'
+
+#DataSync
 alias dstat='/opt/suite/bin/suite-status all'
 alias dstart='sudo /opt/suite/bin/datasyncsuite start'
 alias dstop='sudo /opt/suite/bin/datasyncsuite stop'
@@ -27,3 +35,12 @@ alias slog="sudo tail -f /opt/suite/logs/synchronizer.log /opt/suite/logs/mq-acc
 alias cdos='cd /opt/suite'
 alias cdod='cd /opt/datasync-suite'
 alias cdoc='cd /opt/secret'
+
+
+#LodgeNet
+alias linstall="/Users/cmcgraw/Desktop/lnetPortal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
+alias zsource="source ~/.zshrc"
+alias ctest="cd /Users/cmcgraw/Desktop/lnetPortal/tests/cucumber && cucumber --tags"
+alias cdt="cd /Users/cmcgraw/Desktop/lnetPortal/"
+
+alias sst="svn status"

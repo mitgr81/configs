@@ -13,13 +13,13 @@ set nocompatible						" Don't be compatible with vi
 
 function! Tabstyle_tabs()
 	" Using 4 column tabs
-	set softtabstop=4
-	set shiftwidth=4
-	set tabstop=4
+	set softtabstop=2
+	set shiftwidth=2
+	set tabstop=2
 	set noexpandtab
-	autocmd User Rails set softtabstop=4
-	autocmd User Rails set shiftwidth=4
-	autocmd User Rails set tabstop=4
+	autocmd User Rails set softtabstop=2
+	autocmd User Rails set shiftwidth=2
+	autocmd User Rails set tabstop=2
 	autocmd User Rails set noexpandtab
 endfunction
 
@@ -73,14 +73,14 @@ set incsearch							" show best match so far
 set hlsearch							" Highlight matches to the search 
 
 """" Display
-set background=dark						" I use dark background
 set lazyredraw							" Don't repaint when scripts are running
-set scrolloff=3							" Keep 3 lines below and above the cursor
+set scrolloff=5							" Keep 3 lines below and above the cursor
 set ruler								" line numbers and column the cursor is on
 set number								" Show line numbering
 set numberwidth=1						" Use 1 col + 1 space for numbers
 "colorscheme tango						" Use tango colors
 colorscheme ir_black					" Use the ir_black theme from http://blog.infinitered.com/entries/show/8%3C%7B%7D%3E
+set background=dark						" I use dark background
 
 " tab labels show the filename without path(tail)
 set guitablabel=%N/\ %t\ %M
@@ -127,14 +127,14 @@ syntax on                               " Turn on syntax highlighting
 set tags=tags;\
 set tags=$HOME/.vim/tags/python.ctags
 
-python << EOF
-import os
-import sys
-import vim
-for p in sys.path:
-    if os.path.isdir(p):
-        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-EOF
+"python << EOF
+"import os
+"import sys
+"import vim
+"for p in sys.path:
+"    if os.path.isdir(p):
+"        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+"EOF
 
 
 map <silent><C-Left> <C-T>
@@ -204,6 +204,13 @@ au!
 	au CursorMovedI * if pumvisible() == 0|pclose|endif
 	au InsertLeave * if pumvisible() == 0|pclose|endif
 
+    " Support LodgeNet Files
+    au BufNewFile,BufRead,FileType *.feature set filetype=php
+    au BufNewFile,BufRead,FileType *.inc set filetype=php
+    au BufNewFile,BufRead,FileType *.test set filetype=php
+    au BufNewFile,BufRead,FileType *.module set filetype=php
+
+
 	augroup END
 endif
 
@@ -255,7 +262,7 @@ nnoremap <C-g> 2<C-g>
 " Arg!  I hate hitting q: instead of :q
 nnoremap q: q:iq<esc>
 
-nnoremap W w
+nnoremap :W :w
 
 " <C-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
