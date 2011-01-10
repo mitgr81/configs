@@ -14,6 +14,7 @@ alias ispy="ps ax | grep python"
 alias psuite='ps ax | grep "python\|nginx\|slapd"'
 
 #git / svn
+alias sst="svn status"
 alias pull="git svn rebase"
 alias push="git svn dcommit"
 alias gbr='git branch'
@@ -26,6 +27,7 @@ alias pdbot='python /usr/lib/python2.5/site-packages/robotframework-2.1.1-py2.5.
 alias macterm='export TERM=xterm-color'
 
 #DataSync
+alias m3='ssh mcgrawc@manager3.datasyncintra.net'
 alias dstat='/opt/suite/bin/suite-status all'
 alias dstart='sudo /opt/suite/bin/datasyncsuite start'
 alias dstop='sudo /opt/suite/bin/datasyncsuite stop'
@@ -36,11 +38,8 @@ alias cdos='cd /opt/suite'
 alias cdod='cd /opt/datasync-suite'
 alias cdoc='cd /opt/secret'
 
-
 #LodgeNet
 alias linstall="/Users/cmcgraw/Desktop/lnetPortal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
 alias zsource="source ~/.zshrc"
 alias ctest="cd /Users/cmcgraw/Desktop/lnetPortal/tests/cucumber && cucumber --tags"
 alias cdt="cd /Users/cmcgraw/Desktop/lnetPortal/"
-
-alias sst="svn status"
