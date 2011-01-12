@@ -18,6 +18,7 @@ alias pull="git svn rebase"
 alias push="git svn dcommit"
 alias gbr='git branch'
 alias gst='git status'
+alias gdi='git diff'
 alias gco='git checkout'
 alias gitd='sudo git daemon --base-path=/opt/ --reuseaddr --detach'
 
@@ -40,7 +41,6 @@ alias cdoc='cd /opt/secret'
 #LodgeNet
 alias linstall="/Users/cmcgraw/Desktop/lnetPortal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
 alias zsource="source ~/.zshrc"
-alias ctest="cd /Users/cmcgraw/Desktop/lnetPortal/tests/cucumber && cucumber --tags"
 alias cdt="cd /Users/cmcgraw/Desktop/lnetPortal/"
 
 alias sst="svn status"
