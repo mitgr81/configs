@@ -1,6 +1,6 @@
 [user]
 	name = Chris McGraw
-	email = mitgr81@mitgr81.com 
+  email = chris.mcgraw@lodgenet.com
 [core]
 	editor = vim
 [merge]
@@ -23,5 +23,3 @@
 	diff = auto
 [diff]
 	tool = opendiff 
-	external = opendiff 
-
