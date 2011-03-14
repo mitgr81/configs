@@ -2,7 +2,7 @@
 	name = Chris McGraw
   email = chris.mcgraw@lodgenet.com
 [core]
-	editor = vim
+	editor = /usr/bin/vim
 [merge]
 	tool = opendiff 
 [giggle]

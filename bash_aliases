@@ -2,9 +2,6 @@ alias ll="ls -l"
 alias l='ls -l'
 alias la='ls -la'
 alias g="gvim"
-alias sgrep="grep -I -r --exclude-dir=.svn --exclude-dir=.ropeproject --exclude-dir=nginx --exclude-dir=ldap \
-	--exclude-dir=www --exclude-dir=\"nginx-0*\" --exclude-dir=\"*.egg-info\" \
-	--exclude-dir=logs --exclude=*.swp  --exclude=*.sql --exclude=*.pyc"
 alias findcode="svn status | grep -v \"^D\" | awk '{ print \$2 }'"
 #alias findcode="svn status | grep -v \"^D\" | egrep \"(.css)|(.html)|(.js)|(.py)\" | awk '{ print \$2 }'"
 alias hack="findcode | xargs -r gvim"
@@ -21,7 +18,7 @@ alias gbr='git branch'
 alias gst='git status'
 alias gdi='git diff'
 alias gco='git checkout'
-alias gitd='sudo git daemon --base-path=/opt/ --reuseaddr --detach'
+alias gitd='sudo git daemon --export-all --base-path=/Users/cmcgraw/Desktop/ --reuseaddr &'
 
 #Linux
 alias pdbot='python /usr/lib/python2.5/site-packages/robotframework-2.1.1-py2.5.egg/robot/runner.py --noncritical noncritical --exclude notimplemented -L DEBUG'
@@ -43,3 +40,6 @@ alias cdoc='cd /opt/secret'
 alias linstall="/Users/cmcgraw/Desktop/lnetPortal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
 alias zsource="source ~/.zshrc"
 alias cdt="cd /Users/cmcgraw/Desktop/lnetPortal/"
+alias jenkins="ssh -A ptd-its.ct.lodgenet.com"
+alias murdock="ssh -A etd-atd1.ct.lodgenet.com"
+alias hannibal="ssh -A hannibal.ct.lodgenet.com"

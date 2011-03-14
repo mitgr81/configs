@@ -24,8 +24,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bash_aliases
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-export PATH=$PATH:/Applications/MAMP/Library/bin
+export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:/opt/local/bin
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin
 
 # stuff for lnetPortal testing/operation
@@ -34,6 +35,8 @@ export LNETPORTAL_URL=http://lnetportal.local/
 export DEBUG=1
 export SANDBOX=/Users/cmcgraw/Desktop/lnetPortal
 export CMS_DROPBOX_LOCATION=/Volumes/envision/testing/cms
+export FIREWATIR=1
+#export XDEBUG_CONFIG='idekey=bananasandwich'
 
 #iTerm / Maccy stuff
 growl() { echo -e $'\e]9;'${1}'\007' ; return  ; }
