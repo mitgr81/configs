@@ -30,12 +30,12 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin
 
 # stuff for lnetPortal testing/operation
-#alias firefox-bin='firefox-bin -jssh'
+alias firefox-bin='/Applications/Firefox.app/Contents/MacOS/firefox-bin -jssh'
+export FIREWATIR=1
 export LNETPORTAL_URL=http://lnetportal.local/
 export DEBUG=1
 export SANDBOX=/Users/cmcgraw/Desktop/lnetPortal
 export CMS_DROPBOX_LOCATION=/Volumes/envision/testing/cms
-export FIREWATIR=1
 #export XDEBUG_CONFIG='idekey=bananasandwich'
 
 #iTerm / Maccy stuff
