@@ -109,9 +109,9 @@ set backspace=2							" Backspace over anything! (Super backspace!)
 set showmatch							" Briefly jump to the previous matching paren
 set matchtime=2							" For .2 seconds
 set formatoptions-=tc					" I can format for myself, thank you very much
-set tabstop=4							" Tab stop of 4
-set shiftwidth=4						" sw 4 spaces (used on auto indent)
-set softtabstop=4						" 4 spaces as a tab for bs/del
+set tabstop=2							" Tab stop of 4
+set shiftwidth=2						" sw 4 spaces (used on auto indent)
+set softtabstop=2						" 4 spaces as a tab for bs/del
 
 " we don't want to edit these type of files
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
@@ -208,6 +208,7 @@ au!
     au BufNewFile,BufRead,FileType *.feature set filetype=php
     au BufNewFile,BufRead,FileType *.inc set filetype=php
     au BufNewFile,BufRead,FileType *.test set filetype=php
+    au BufNewFile,BufRead,FileType *.unit set filetype=php
     au BufNewFile,BufRead,FileType *.module set filetype=php
 
 
