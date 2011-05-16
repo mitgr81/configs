@@ -39,8 +39,9 @@ alias cdoc='cd /opt/secret'
 #LodgeNet
 alias linstall="/Users/cmcgraw/Desktop/lnetPortal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
 alias zsource="source ~/.zshrc"
-alias cdt="cd /Users/cmcgraw/Desktop/lnetPortal/"
+alias cdt="cd /Users/cmcgraw/Desktop/portal/"
 alias jenkins="ssh -A ptd-its.ct.lodgenet.com"
 alias murdock="ssh -A etd-atd1.ct.lodgenet.com"
 alias hannibal="ssh -A hannibal.ct.lodgenet.com"
 alias drush="~/bin/drushfolder/drush.php --uri=lnetportal.local"
+alias ptest="nocorrect ptest"
