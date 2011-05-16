@@ -11,6 +11,11 @@ if 1
 """ Settings 
 set nocompatible						" Don't be compatible with vi
 
+""" Pathogen stuff!
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 function! Tabstyle_tabs()
 	" Using 4 column tabs
 	set softtabstop=2
@@ -78,8 +83,8 @@ set scrolloff=5							" Keep 3 lines below and above the cursor
 set ruler								" line numbers and column the cursor is on
 set number								" Show line numbering
 set numberwidth=1						" Use 1 col + 1 space for numbers
-"colorscheme tango						" Use tango colors
-colorscheme ir_black					" Use the ir_black theme from http://blog.infinitered.com/entries/show/8%3C%7B%7D%3E
+colorscheme tango						" Use tango colors
+"colorscheme ir_black					" Use the ir_black theme from http://blog.infinitered.com/entries/show/8%3C%7B%7D%3E
 set background=dark						" I use dark background
 
 " tab labels show the filename without path(tail)
@@ -122,6 +127,9 @@ set showfulltag							" Show more information while completing tags
 filetype plugin on                      " Enable filetype plugins
 filetype plugin indent on               " Let filetype plugins indent for me
 syntax on                               " Turn on syntax highlighting
+
+" Customize Leader
+let mapleader = ","
 
 " set up tags
 set tags=tags;\
@@ -310,6 +318,12 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeIgnore=['\.pyc$', '\.vim$', '\~$']
 let NERDTreeMouseMode=1
 let NERDTreeWinSizDTreeWinSize = 30
+
+" PEP8
+let g:pep8_map='<leader>8'
+
+" TaskList
+map <leader>td <Plug>TaskList
 
 
 " SnippetsEmu
