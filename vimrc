@@ -16,6 +16,9 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set guifont=Inconsolata:h18
+set guioptions-=T
+
 function! Tabstyle_tabs()
 	" Using 4 column tabs
 	set softtabstop=2

@@ -12,8 +12,8 @@ alias psuite='ps ax | grep "python\|nginx\|slapd"'
 
 #git / svn
 alias sst="svn status"
-alias pull="git svn rebase"
-alias push="git svn dcommit"
+alias pull="git pull"
+alias push="git push"
 alias gbr='git branch'
 alias gst='git status'
 alias gdi='git diff'
