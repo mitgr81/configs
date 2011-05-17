@@ -13,6 +13,7 @@
 	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
+  tagshow = !sh -c 'git show-ref --tags | sort'
 	di = diff
 [color]
 	status = auto
