@@ -315,6 +315,8 @@ endif
 " NERDTree
 "  ********************************************************************
 :noremap <F5> :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<cr>
+
 
 let NERDTreeHijackNetrw=1
 let NERDTreeQuitOnOpen = 1

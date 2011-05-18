@@ -37,9 +37,9 @@ alias cdod='cd /opt/datasync-suite'
 alias cdoc='cd /opt/secret'
 
 #LodgeNet
-alias linstall="/Users/cmcgraw/Desktop/lnetPortal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
+alias linstall="/Users/cmcgraw/src/portal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
 alias zsource="source ~/.zshrc"
-alias cdt="cd /Users/cmcgraw/Desktop/portal/"
+alias cdt="cd /Users/cmcgraw/src/portal"
 alias jenkins="ssh -A ptd-its.ct.lodgenet.com"
 alias murdock="ssh -A etd-atd1.ct.lodgenet.com"
 alias hannibal="ssh -A hannibal.ct.lodgenet.com"

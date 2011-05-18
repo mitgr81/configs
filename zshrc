@@ -34,7 +34,7 @@ alias firefox-bin='/Applications/Firefox3.app/Contents/MacOS/firefox-bin -jssh'
 export FIREWATIR=1
 export LNETPORTAL_URL=http://lnetportal.local/
 export DEBUG=1
-export SANDBOX=/Users/cmcgraw/Desktop/portal
+export SANDBOX=/Users/cmcgraw/src/portal
 export CMS_DROPBOX_LOCATION=/Volumes/envision/testing/cms
 #export XDEBUG_CONFIG='idekey=bananasandwich'
 
