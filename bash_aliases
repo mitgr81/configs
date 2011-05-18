@@ -18,7 +18,7 @@ alias gbr='git branch'
 alias gst='git status'
 alias gdi='git diff'
 alias gco='git checkout'
-alias gitd='sudo git daemon --export-all --base-path=/Users/cmcgraw/Desktop/ --reuseaddr --detach'
+alias gitd='sudo git daemon --export-all --base-path=/Users/cmcgraw/src/ --reuseaddr --detach'
 
 #Linux
 alias pdbot='python /usr/lib/python2.5/site-packages/robotframework-2.1.1-py2.5.egg/robot/runner.py --noncritical noncritical --exclude notimplemented -L DEBUG'
