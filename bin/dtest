@@ -1,0 +1,7 @@
+#!/bin/zsh
+mycwd=`pwd`
+cd $SANDBOX/tests/drupal
+result=`time php test_runner.php`
+growlnotify -t "Unit Tests" -m "$result"
+echo $result
+cd $mycwd

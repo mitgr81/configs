@@ -1,0 +1,3 @@
+#!/bin/bash
+growlnotify -t 'Connecting to Buildbot Run' -m "VNC Viewer display: ${1}"
+ssh -X ptd-its.ct.lodgenet.com vncviewer :${1}

@@ -1,0 +1,16 @@
+#!/bin/bash
+mycwd=`pwd`
+cd $SANDBOX/tests/robotframework
+growlnotify -t "Hi Paul!  Running PyBot tests tagged 'rubberstamp' ${1}" -m "Remember, tagging a secnario:"$'\n\n'"<Scenario Name>  [Tags]  rubberstamp"$'\n\n'"Yes, that's 2 spaces"
+echo -e "Running PyBot tests tagged 'rubberstamp' ${1}"
+pybot -i rubberstamp ${1} features
+cucstat=$?
+case "$cucstat" in
+    0)
+        growlnotify -t 'Epic Win!' -m 'PyBot tests passed!'
+        ;;
+    1)
+        growlnotify -t 'Epic Fail!' -m 'PyBot tests failed!'
+        ;;
+    esac
+cd $mycwd

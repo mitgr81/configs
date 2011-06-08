@@ -74,6 +74,8 @@ call Tabstyle_spaces()
 noremap j gj
 noremap k gk
 
+set nowrap
+
 """" Searching and Patterns
 set ignorecase							" search is case insensitive
 set smartcase							" search case sensitive if caps on 

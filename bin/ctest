@@ -1,0 +1,18 @@
+#!/bin/bash
+mycwd=`pwd`
+cp $SANDBOX/tests/cucumber/features/support/password.copy $SANDBOX/tests/cucumber/features/support/password.rb 
+cd $SANDBOX/tests/cucumber
+growlnotify -t 'Running Cuke tests' -m "tags: @crm ${1}"
+echo -e "Running Cuke tests tagged, @crm ${1}\n…"
+#/Users/cmcgraw/.rvm/rubies/jruby-1.5.6/bin/ruby -S 
+cucumber --tags @crm,${1}
+cucstat=$?
+case "$cucstat" in
+    0)
+        growlnotify -t 'Epic Win!' -m 'Cucumber tests passed!'
+        ;;
+    1)
+        growlnotify -t 'Epic Fail!' -m 'Cucumber tests failed!'
+        ;;
+    esac
+cd $mycwd
