@@ -212,13 +212,16 @@ au!
 	" setup file type for code snippets
 	au FileType python if &ft !~ 'django' | setlocal filetype=python.django_tempate.django_model | endif
 	au FileType python set expandtab
+  au FileType python set softtabstop=4
+  au FileType python set shiftwidth=4
+  au FileType python set tabstop=4
 
 	" kill calltip window if we move cursor or leave insert mode
 	au CursorMovedI * if pumvisible() == 0|pclose|endif
 	au InsertLeave * if pumvisible() == 0|pclose|endif
 
     " Support LodgeNet Files
-    au BufNewFile,BufRead,FileType *.feature set filetype=php
+    au BufNewFile,BufRead,FileType *.feature set filetype=cucumber
     au BufNewFile,BufRead,FileType *.inc set filetype=php
     au BufNewFile,BufRead,FileType *.test set filetype=php
     au BufNewFile,BufRead,FileType *.unit set filetype=php
