@@ -88,8 +88,8 @@ set scrolloff=5							" Keep 3 lines below and above the cursor
 set ruler								" line numbers and column the cursor is on
 set number								" Show line numbering
 set numberwidth=1						" Use 1 col + 1 space for numbers
-colorscheme tango						" Use tango colors
-"colorscheme ir_black					" Use the ir_black theme from http://blog.infinitered.com/entries/show/8%3C%7B%7D%3E
+"colorscheme tango						" Use tango colors
+colorscheme ir_black					" Use the ir_black theme from http://blog.infinitered.com/entries/show/8%3C%7B%7D%3E
 set background=dark						" I use dark background
 
 " tab labels show the filename without path(tail)
@@ -221,11 +221,12 @@ au!
 	au InsertLeave * if pumvisible() == 0|pclose|endif
 
     " Support LodgeNet Files
-    au BufNewFile,BufRead,FileType *.feature set filetype=cucumber
     au BufNewFile,BufRead,FileType *.inc set filetype=php
+    au BufNewFile,BufRead,FileType *.install set filetype=php
     au BufNewFile,BufRead,FileType *.test set filetype=php
     au BufNewFile,BufRead,FileType *.unit set filetype=php
     au BufNewFile,BufRead,FileType *.module set filetype=php
+    au BufNewFile,BufRead,FileType *.feature set filetype=cucumber
 
 
 	augroup END
