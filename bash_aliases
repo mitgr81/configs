@@ -9,6 +9,7 @@ alias squig="ssh -X root@squigherder"
 alias serenity="ssh datasync@serenity.datasyncintra.net"
 alias ispy="ps ax | grep python"
 alias psuite='ps ax | grep "python\|nginx\|slapd"'
+alias crontab="VIM_CRONTAB=true crontab"
 
 #git / svn
 alias sst="svn status"
@@ -40,6 +41,7 @@ alias cdoc='cd /opt/secret'
 alias linstall="/Users/cmcgraw/src/portal/scripts/drupal_install.sh -u lnet -p 1pass234 -fmr -ld -no-swf -d lnetPortal"
 alias zsource="source ~/.zshrc"
 alias cdt="cd /Users/cmcgraw/src/portal"
+alias cdl="cd /Users/cmcgraw/src/portal/tests/lettuce"
 alias jenkins="ssh -A ptd-its.ct.lodgenet.com"
 alias murdock="ssh -A etd-atd1.ct.lodgenet.com"
 alias hannibal="ssh -A hannibal.ct.lodgenet.com"

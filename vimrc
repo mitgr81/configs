@@ -8,7 +8,7 @@ endif
 "" Skip this file unless we have +eval
 if 1
 
-""" Settings 
+""" Settings
 set nocompatible						" Don't be compatible with vi
 
 """ Pathogen stuff!
@@ -24,11 +24,11 @@ function! Tabstyle_tabs()
 	set softtabstop=2
 	set shiftwidth=2
 	set tabstop=2
-	set noexpandtab
+	set expandtab
 	autocmd User Rails set softtabstop=2
 	autocmd User Rails set shiftwidth=2
 	autocmd User Rails set tabstop=2
-	autocmd User Rails set noexpandtab
+	autocmd User Rails set expandtab
 endfunction
 
 function! Tabstyle_spaces()
@@ -43,7 +43,7 @@ call Tabstyle_spaces()
 
 " Indenting
 " *******************************************************************
- set ai " Automatically set the indent of a new line (local to buffer) 
+ set ai " Automatically set the indent of a new line (local to buffer)
  set si " smartindent  (local to buffer)
 
 
@@ -78,9 +78,9 @@ set nowrap
 
 """" Searching and Patterns
 set ignorecase							" search is case insensitive
-set smartcase							" search case sensitive if caps on 
+set smartcase							" search case sensitive if caps on
 set incsearch							" show best match so far
-set hlsearch							" Highlight matches to the search 
+set hlsearch							" Highlight matches to the search
 
 """" Display
 set lazyredraw							" Don't repaint when scripts are running
@@ -90,7 +90,7 @@ set number								" Show line numbering
 set numberwidth=1						" Use 1 col + 1 space for numbers
 "colorscheme tango						" Use tango colors
 colorscheme ir_black					" Use the ir_black theme from http://blog.infinitered.com/entries/show/8%3C%7B%7D%3E
-set background=dark						" I use dark background
+set background=light                    " I use light background
 
 " tab labels show the filename without path(tail)
 set guitablabel=%N/\ %t\ %M
@@ -112,7 +112,7 @@ set confirm								" Y-N-C prompt if closing with unsaved changes
 set vb t_vb=							" Disable visual bell!  I hate that flashing.
 set novisualbell
 
-"match LongLineWarning '\%120v.*' " Error format when a line is longer than 120 
+"match LongLineWarning '\%120v.*' " Error format when a line is longer than 120
 
 """" Editing
 set backspace=2							" Backspace over anything! (Super backspace!)
@@ -122,6 +122,8 @@ set formatoptions-=tc					" I can format for myself, thank you very much
 set tabstop=2							" Tab stop of 4
 set shiftwidth=2						" sw 4 spaces (used on auto indent)
 set softtabstop=2						" 4 spaces as a tab for bs/del
+
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " we don't want to edit these type of files
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
@@ -154,14 +156,14 @@ map <silent><C-Left> <C-T>
 map <silent><C-Right> <C-]>
 
 " Mappings
-" ********************************************************************                                                                                                                                  
+" ********************************************************************
 " Professor VIM says '87% of users prefer jj over esc', jj abrams disagrees
 imap jj <Esc>
- 
+
 " Cursor Movement
 " *************************************************************
 " " Make cursor move by visual lines instead of file lines (when wrapping)
-" map <up> gk 
+" map <up> gk
 " map k gk
 " imap <up> <C-o>gk
 " map <down> gj
@@ -227,6 +229,9 @@ au!
     au BufNewFile,BufRead,FileType *.unit set filetype=php
     au BufNewFile,BufRead,FileType *.module set filetype=php
     au BufNewFile,BufRead,FileType *.feature set filetype=cucumber
+  au FileType php set softtabstop=2
+  au FileType php set shiftwidth=2
+  au FileType php set tabstop=2
 
 
 	augroup END
@@ -261,13 +266,13 @@ nnoremap  <s-right>  vl
 nnoremap  <s-left>   vh
 
 if &diff
-" easily handle diffing 
+" easily handle diffing
    vnoremap < :diffget<CR>
    vnoremap > :diffput<CR>
 else
 " visual shifting (builtin-repeat)
-   vnoremap < <gv                       
-   vnoremap > >gv 
+   vnoremap < <gv
+   vnoremap > >gv
 endif
 
 " Extra functionality for some existing commands:
@@ -312,11 +317,11 @@ iabbr _d  <C-R>=strftime("%a, %d %b %Y")<CR><C-R>=EatChar('\s')<CR>
 iabbr _dt <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR><C-R>=EatChar('\s')<CR>
 
 endif
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 "  " |                              Plug-ins
 "  |
 "  "
-"  -----------------------------------------------------------------------------  
+"  -----------------------------------------------------------------------------
 
 " NERDTree
 "  ********************************************************************
@@ -380,3 +385,10 @@ if !exists("autocommands_loaded")
     endif
 
 set hidden
+
+if $VIM_CRONTAB == 'true'
+  set nobackup
+  set nowritebackup
+endif
+
+autocmd BufWritePre * :%s/\s\+$//e
