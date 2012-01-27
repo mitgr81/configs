@@ -1,0 +1,5 @@
+#!/bin/bash
+mycwd=`pwd`
+cd $SANDBOX/tests/mocha
+mocha --ui tdd --reporter spec
+cd $mycwd
