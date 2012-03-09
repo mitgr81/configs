@@ -29,10 +29,11 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin
 
 # stuff for lnetPortal testing/operation
-export LNETPORTAL_URL=http://lnetportal.local/
+export LNETPORTAL_URL=http://cmcgraw.local/
 export DEBUG=1
 export MAXIMIZE=1
 export SANDBOX=/Users/cmcgraw/src/portal
+export PYTHONPATH=$PYTHONPATH:$SANDBOX/tests/python
 export CMS_DROPBOX_LOCATION=/Volumes/envision/testing/cms
 #export XDEBUG_CONFIG='idekey=bananasandwich'
 
