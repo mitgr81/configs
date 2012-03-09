@@ -24,9 +24,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bash_aliases
 
 export PATH=$PATH:/usr/local/mysql/bin
-export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/src/devconfigs/bin
 
 # stuff for lnetPortal testing/operation
 export LNETPORTAL_URL=http://cmcgraw.local/
