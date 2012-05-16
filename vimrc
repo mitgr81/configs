@@ -122,6 +122,7 @@ set formatoptions-=tc					" I can format for myself, thank you very much
 set tabstop=2							" Tab stop of 4
 set shiftwidth=2						" sw 4 spaces (used on auto indent)
 set softtabstop=2						" 4 spaces as a tab for bs/del
+set textwidth=72
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
