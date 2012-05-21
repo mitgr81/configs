@@ -33,8 +33,7 @@ export DEBUG=1
 export MAXIMIZE=1
 export SANDBOX=/Users/cmcgraw/src/portal
 export PYTHONPATH=$PYTHONPATH:$SANDBOX/tests/python
-export CMS_DROPBOX_LOCATION=/Volumes/envision/testing/cms
-#export XDEBUG_CONFIG='idekey=bananasandwich'
+export XDEBUG_CONFIG='idekey=bananasandwich'
 
 #iTerm / Maccy stuff
 growl() { echo -e $'\e]9;'${1}'\007' ; return  ; }
