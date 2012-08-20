@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh configuration.
+export PATH=$PATH:/usr/local/bin
 export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
@@ -29,6 +30,7 @@ export PATH=$PATH:/src/devconfigs/bin
 
 # stuff for lnetPortal testing/operation
 export LNETPORTAL_URL=http://cmcgraw.local/
+export LNETPATIENTPORTAL_URL=http://cmcgraw-patientportal.local/
 export DEBUG=1
 export MAXIMIZE=1
 export SANDBOX=/Users/cmcgraw/src/portal
