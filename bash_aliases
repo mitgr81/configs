@@ -38,13 +38,13 @@ alias cdod='cd /opt/datasync-suite'
 alias cdoc='cd /opt/secret'
 
 #LodgeNet
-alias linstall="~/src/portal/scripts/drupal_install.sh -u root -fmr -ld -no-swf -d cmcgraw_lnetPortal"
+alias linstall="/src/portal/scripts/drupal_install.sh -u root -fmr -ld -no-swf -d cmcgraw_lnetPortal"
 alias zsource="source ~/.zshrc"
-alias cdt="cd /Users/cmcgraw/src/portal"
-alias cdl="cd /Users/cmcgraw/src/portal/tests/lettuce"
-alias cdmq="cd /Users/cmcgraw/src/lodgenet-mq"
+alias cdt="cd /src/portal"
+alias cdl="cd /portal/tests/lettuce"
+alias cdmq="cd /src/lodgenet-mq"
 alias jenkins="ssh -A ptd-its.ct.lodgenet.com"
 alias murdock="ssh -A etd-atd1.ct.lodgenet.com"
 alias hannibal="ssh -A hannibal.ct.lodgenet.com"
-alias drush="/usr/local/Cellar/drush/5.4/bin/drush --uri=cmcgraw.local"
+alias drush="/usr/local/Cellar/drush/5.4/bin/drush --uri=undercity.ct.lodgenet.com"
 alias ptest="nocorrect ptest"

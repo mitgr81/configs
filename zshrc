@@ -29,11 +29,11 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/src/devconfigs/bin
 
 # stuff for lnetPortal testing/operation
-export LNETPORTAL_URL=http://cmcgraw.local/
-export LNETPATIENTPORTAL_URL=http://cmcgraw-patientportal.local/
+export LNETPORTAL_URL=http://undercity.ct.lodgenet.com/
+export LNETPATIENTPORTAL_URL=http://undercity-patientportal.ct.lodgenet.com/
 export DEBUG=1
 export MAXIMIZE=1
-export SANDBOX=/Users/cmcgraw/src/portal
+export SANDBOX=/src/portal
 export PYTHONPATH=$PYTHONPATH:$SANDBOX/tests/python
 export XDEBUG_CONFIG='idekey=bananasandwich'
 
