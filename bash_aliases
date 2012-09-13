@@ -40,9 +40,9 @@ alias cdoc='cd /opt/secret'
 #LodgeNet
 alias linstall="/src/portal/scripts/drupal_install.sh -u root -fmr -ld -no-swf -d cmcgraw_lnetPortal"
 alias zsource="source ~/.zshrc"
-alias cdt="cd /src/portal"
-alias cdl="cd /portal/tests/lettuce"
-alias cdmq="cd /src/lodgenet-mq"
+alias cdt="cd /src/portal; workon portal"
+alias cdl="cd /src/portal/tests/lettuce; workon portal"
+alias cdmq="cd /src/lodgenet-mq; workon lodgenet-mq"
 alias jenkins="ssh -A ptd-its.ct.lodgenet.com"
 alias murdock="ssh -A etd-atd1.ct.lodgenet.com"
 alias hannibal="ssh -A hannibal.ct.lodgenet.com"

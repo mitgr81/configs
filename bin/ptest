@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-cd /Users/cmcgraw/src/carbonblack-server/src/python/cb/rest
+cd /src/lodgenet-mq/python
 echo "running unit tests"
-SUC=$({ nosetests -s } 2>&1)
+SUC=$({ nosetests --with-spec --spec-color --nologcapture } 2>&1)
 echo "$SUC"
 growlnotify -m "$SUC"
