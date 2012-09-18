@@ -39,3 +39,6 @@ export CMS_DROPBOX_LOCATION=/Volumes/envision/testing/cms
 #iTerm / Maccy stuff
 growl() { echo -e $'\e]9;'${1}'\007' ; return  ; }
 export EDITOR='vim'
+
+#Python jazz!
+source /usr/local/bin/virtualenvwrapper.sh
