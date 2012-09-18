@@ -1,8 +1,8 @@
 [user]
 	name = Chris McGraw
-  email = chris.mcgraw@lodgenet.com
+	email = chris.mcgraw@lodgenet.com
 [merge]
-	tool = opendiff 
+	tool = opendiff
 [giggle]
 	compact-mode = true
 	main-window-maximized = true
@@ -17,8 +17,19 @@
 	di = diff
 [color]
 	status = auto
+  ui = true
 	branch = auto
 	interactive = auto
 	diff = auto
 [diff]
-	tool = opendiff 
+	tool = opendiff
+[core]
+	excludesfile = /Users/cmcgraw/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/cmcgraw/.gitmessage.txt

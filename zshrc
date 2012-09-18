@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh configuration.
+export PATH=$PATH:/usr/local/bin
 export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
@@ -16,7 +17,7 @@ export ZSH_THEME="mrtazz"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git osx brew python sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,17 +25,17 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bash_aliases
 
 export PATH=$PATH:/usr/local/mysql/bin
-export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/src/devconfigs/bin
 
 # stuff for lnetPortal testing/operation
-export LNETPORTAL_URL=http://lnetportal.local/
+export LNETPORTAL_URL=http://undercity.ct.lodgenet.com/
+export LNETPATIENTPORTAL_URL=http://undercity-patientportal.ct.lodgenet.com/
 export DEBUG=1
 export MAXIMIZE=1
-export SANDBOX=/Users/cmcgraw/src/portal
-export CMS_DROPBOX_LOCATION=/Volumes/envision/testing/cms
-#export XDEBUG_CONFIG='idekey=bananasandwich'
+export SANDBOX=/src/portal
+export PYTHONPATH=$PYTHONPATH:$SANDBOX/tests/python
+export XDEBUG_CONFIG='idekey=bananasandwich'
 
 #iTerm / Maccy stuff
 growl() { echo -e $'\e]9;'${1}'\007' ; return  ; }
