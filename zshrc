@@ -43,3 +43,7 @@ export EDITOR='vim'
 
 #Python jazz!
 source /usr/local/bin/virtualenvwrapper.sh
+
+#Django
+#Fix Snow Leopard path issue
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
