@@ -29,8 +29,8 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/src/devconfigs/bin
 
 # stuff for lnetPortal testing/operation
-export LNETPORTAL_URL=http://undercity.ct.lodgenet.com/
-export LNETPATIENTPORTAL_URL=http://undercity-patientportal.ct.lodgenet.com/
+export LNETPORTAL_URL=http://undercity.ct.lodgenet.com:8080/
+export LNETPATIENTPORTAL_URL=http://undercity-patientportal.ct.lodgenet.com:8080/
 export DEBUG=1
 export MAXIMIZE=1
 export SANDBOX=/src/portal
@@ -47,3 +47,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 #Django
 #Fix Snow Leopard path issue
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+export DRUPAL_DB_NAME=cmcgraw_lnetPortal

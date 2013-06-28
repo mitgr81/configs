@@ -13,6 +13,8 @@ alias crontab="VIM_CRONTAB=true crontab"
 
 #git / svn
 alias sst="svn status"
+alias svnpull="git-svn rebase"
+alias svnpush="git-svn dcommit"
 alias pull="git pull"
 alias push="git push"
 alias gbr='git branch'
@@ -38,13 +40,15 @@ alias cdod='cd /opt/datasync-suite'
 alias cdoc='cd /opt/secret'
 
 #LodgeNet
-alias linstall="/src/portal/scripts/drupal_install.sh -u root -fmr -d cmcgraw_lnetPortal"
+alias linstall="/src/portal/scripts/drupal_install.sh -u root -fmr -d cmcgraw_lnetPortal; drush pf disable"
 alias zsource="source ~/.zshrc"
 alias cdt="cd /src/portal; workon portal"
+alias cdb="cd /src/wonderboom_back; workon wonderboom"
+alias cdf="cd /src/wonderboom_front; workon wonderboom"
 alias cdl="cd /src/portal/tests/lettuce; workon portal"
 alias cdmq="cd /src/lodgenet-mq; workon lodgenet-mq"
 alias jenkins="ssh -A ptd-its.ct.lodgenet.com"
 alias murdock="ssh -A etd-atd1.ct.lodgenet.com"
 alias hannibal="ssh -A hannibal.ct.lodgenet.com"
 alias drush="/usr/local/Cellar/drush/5.7/bin/drush --uri=undercity.ct.lodgenet.com"
-alias ptest="nocorrect ptest"
+alias ptest="nosetests --with-spec --spec-color --nologcapture"
