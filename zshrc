@@ -44,7 +44,10 @@ export EDITOR='vim'
 #Python jazz!
 source /usr/local/bin/virtualenvwrapper.sh
 
-#Django
-#Fix Snow Leopard path issue
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+#Wonderboom
 export DRUPAL_DB_NAME=cmcgraw_lnetPortal
+export PGHOST=localhost
+export PGUSER=postgres
+export TESTRUNNER_EXEC='nosetests --with-spec --spec-color --nologcapture'
+export LETTUCERUNNER='lettuce -t -in_dev'
+export TESTER_TOKEN=crm
