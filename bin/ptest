@@ -2,6 +2,6 @@
 
 cd /src/lodgenet-mq/python
 echo "running unit tests"
-SUC=$({ nosetests --with-spec --spec-color --nologcapture } 2>&1)
+SUC=$({ nosetests --with-spec --spec-color --nologcapture --with-coverage } 2>&1)
 echo "$SUC"
 growlnotify -m "$SUC"

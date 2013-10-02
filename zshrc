@@ -48,6 +48,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 export DRUPAL_DB_NAME=cmcgraw_lnetPortal
 export PGHOST=localhost
 export PGUSER=postgres
-export TESTRUNNER_EXEC='nosetests --with-spec --spec-color --nologcapture'
-export LETTUCERUNNER='lettuce -t -in_dev'
+export TESTRUNNER_EXEC='nosetests --with-specplugin --nologcapture --with-coverage'
 export TESTER_TOKEN=crm
+alias behave="WB_WSGI_PORT=5000 WB_STATIC_PORT=9000 behave --logging-level ERROR"
