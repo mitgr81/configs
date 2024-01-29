@@ -207,10 +207,12 @@ require("cmp").setup({
 -- from https://neovim.io/doc/user/lsp.html#lsp-faq
 -- END cmp setup from nvchad
 --
-require("catppuccin").setup({
-	flavour = "macchiato",
-	compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
-})
+-- vim.defer_fn(function()
+-- 	require("catppuccin").setup({
+-- 		flavour = "macchiato",
+-- 		-- compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
+-- 	})
+-- end, 10)
 
 local ls = require("luasnip")
 local s = ls.snippet
