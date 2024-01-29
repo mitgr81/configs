@@ -237,7 +237,22 @@ ls.add_snippets("markdown", {
 		t({ "", "" }),
 	}),
 })
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
+
+local misc_augroup = vim.api.nvim_create_augroup("misc", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+	-- Adapted from: vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
+	desc = "Run LSP formatter on Write",
+	group = misc_augroup,
+	pattern = "*",
+	command = 'lua vim.lsp.buf.format({async = false})',
+})
+
+vim.api.nvim_create_autocmd('BufReadPost', {
+	desc = 'Open file at the last position it was edited earlier',
+	group = misc_augroup,
+	pattern = '*',
+	command = 'silent! normal! g`"zv'
+})
 vim.opt.hlsearch = true
 vim.opt.colorcolumn = "120"
 vim.opt.wrap = false
