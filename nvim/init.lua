@@ -168,12 +168,12 @@ require('lazy').setup({
   -- },
 
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "Shatur/neovim-ayu",
+    name = "ayu",
     priority = 1000,
     config = function()
-      vim.o.background = 'dark'
-      vim.cmd.colorscheme 'catppuccin'
+      require("ayu").setup({ mirage = true })
+      vim.cmd.colorscheme 'ayu-mirage'
     end,
   },
   {
@@ -183,8 +183,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        -- theme = 'tokyonight',
-        theme = 'catppuccin',
+        theme = 'ayu',
         section_separators = { left = '', right = '' },
         -- sections = { lualine_c = { path = 2 } },
       },
