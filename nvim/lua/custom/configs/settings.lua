@@ -247,6 +247,21 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	command = 'lua vim.lsp.buf.format({async = false})',
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+	buffer = buffer,
+	pattern = "*",
+	callback = function()
+		if vim.bo.filetype == "toml" then
+			return
+		end
+		vim.lsp.buf.code_action({
+			context = { only = { "source.organizeImports" } },
+			apply = true,
+		})
+		vim.wait(100)
+	end,
+})
+
 vim.api.nvim_create_autocmd('BufReadPost', {
 	desc = 'Open file at the last position it was edited earlier',
 	group = misc_augroup,

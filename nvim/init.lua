@@ -542,7 +542,7 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
+  gopls = {},
   dockerls = {},
   jedi_language_server = { filetypes = { 'python' } },
   -- pyright = { filetypes = { 'python' } },
