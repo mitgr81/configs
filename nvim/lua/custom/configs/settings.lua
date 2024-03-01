@@ -251,8 +251,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	buffer = buffer,
 	pattern = "*",
 	callback = function()
-		if vim.bo.filetype == "toml" then
-			return
+		local skippables = { "markdown", "toml", "yaml" }
+		for _, skippable in pairs(skippables) do
+			if vim.bo.filetype == skippable then
+				return
+			end
 		end
 		vim.lsp.buf.code_action({
 			context = { only = { "source.organizeImports" } },

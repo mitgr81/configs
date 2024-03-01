@@ -158,24 +158,24 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.o.background = 'dark'
-  --     vim.cmd.colorscheme 'tokyonight-night'
-  --   end,
-  -- },
-
   {
-    "Shatur/neovim-ayu",
-    name = "ayu",
+    'folke/tokyonight.nvim',
     priority = 1000,
     config = function()
-      require("ayu").setup({ mirage = true })
-      vim.cmd.colorscheme 'ayu-mirage'
+      vim.o.background = 'dark'
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
+
+  -- {
+  --   "Shatur/neovim-ayu",
+  --   name = "ayu",
+  --   priority = 1000,
+  --   config = function()
+  --     require("ayu").setup({ mirage = true })
+  --     vim.cmd.colorscheme 'ayu-mirage'
+  --   end,
+  -- },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -183,7 +183,8 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'ayu',
+        -- theme = 'ayu',
+        theme = 'tokyonight',
         section_separators = { left = '', right = '' },
         -- sections = { lualine_c = { path = 2 } },
       },
@@ -545,7 +546,7 @@ local servers = {
   gopls = {},
   dockerls = {},
   jedi_language_server = { filetypes = { 'python' } },
-  -- pyright = { filetypes = { 'python' } },
+  pyright = { filetypes = { 'python' } },
   -- pylance = {},
   -- rust_analyzer = {},
   eslint = {
