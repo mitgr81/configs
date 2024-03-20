@@ -21,6 +21,9 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 -- Professor VIM says '87% of users prefer jj over esc', jj abrams disagrees
 vim.keymap.set("i", "jj", "<ESC>")
 
+-- Bind Escape to leave "terminal" mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
 -- Buffers
 vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
