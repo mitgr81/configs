@@ -24,7 +24,7 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 end)
 
 require("ibl").setup({
-	indent = { highlight = highlight, char = '┊' },
+	indent = { highlight = highlight, char = '┊', tab_char = "▎" },
 	exclude = { filetypes = { "dashboard" } },
 })
 
@@ -283,7 +283,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.list = true
-vim.opt.listchars = "tab:>.,trail:~,extends:>,precedes:<"
+vim.opt.listchars = "tab:┈┈,trail:~,multispace:.,extends:▶,precedes:◀,nbsp:‿"
 vim.opt.cursorline = true
 -- vim.opt.cursorlineopt = "number"
 vim.opt.foldmethod = "indent"
