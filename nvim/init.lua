@@ -545,7 +545,16 @@ local servers = {
   -- clangd = {},
   gopls = {},
   dockerls = {},
-  jedi_language_server = { filetypes = { 'python' } },
+  ruff = {
+    init_options = {
+      settings = {
+        -- Any extra CLI arguments for `ruff` go here.
+        run = "onSave",
+        args = { '--line-length=120' },
+      }
+    }
+  },
+  -- jedi_language_server = { filetypes = { 'python' } },
   pyright = { filetypes = { 'python' } },
   -- pylance = {},
   -- rust_analyzer = {},
@@ -567,15 +576,6 @@ local servers = {
   },
   marksman = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
-  ruff_lsp = {
-    init_options = {
-      settings = {
-        -- Any extra CLI arguments for `ruff` go here.
-        run = "onSave",
-        args = { '--line-length=120' },
-      }
-    }
-  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -587,6 +587,7 @@ local servers = {
     -- Configured in `~/src/.taplo.toml`
   },
   yamlls = {},
+  cucumber_language_server = {},
 }
 
 -- Setup neovim lua configuration
@@ -606,6 +607,14 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
+    }
+    require('lspconfig').pyright.setup {
+      settings = {
+        pyright = {
+          -- Using Ruff's import organizer
+          disableOrganizeImports = true,
+        },
+      },
     }
   end,
 }

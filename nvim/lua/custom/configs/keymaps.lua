@@ -34,10 +34,6 @@ vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>e", ":Ex<cr>", { desc = "Open file [e]xplorer" })
 vim.keymap.set("n", "<leader>E", ":Ex<cr>", { desc = "Open file [E]xplorer" })
 
--- vim-test configs
-vim.keymap.set("n", "<leader>t", ":TestNearest<cr>")
-vim.keymap.set("n", "<leader>T", ":TestFile<cr>")
-
 --vim.keymap.set('n', '<leader>hp', gs.preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
 --
 -- Make CTRL-E and CTRL-A jump to end and beginning of line

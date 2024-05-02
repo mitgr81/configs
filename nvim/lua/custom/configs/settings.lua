@@ -307,3 +307,6 @@ require("lualine").setup({
 		}
 	}
 })
+
+-- Python stuff
+vim.g.python3_host_prog = '/Users/cmcgraw/.virtualenvs/py3nvim/bin/python'
