@@ -21,6 +21,6 @@ abbr -a -- hsatest 'poetry run pytest cloud_deploy site_appliance rpm_assets/sup
 abbr -a -- pv 'poetry run nvim'
 
 # Created by `pipx` on 2022-05-16 16:52:50
-set PATH $PATH /Users/cmcgraw/.local/bin
+set PATH $PATH /$HOME/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
-source /Users/cmcgraw/.config/op/plugins.sh
+source $HOME/.config/op/plugins.sh
