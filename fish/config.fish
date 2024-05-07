@@ -17,11 +17,11 @@ status is-login; and pyenv init --path | source
 pyenv init - | source
 
 abbr -a -- apptest 'poetry run pytest -m "not integration" --disable-warnings'
-abbr -a -- cdb 'cd /Users/cmcgraw/src/wonderboom_back'
-abbr -a -- cdf 'cd /Users/cmcgraw/src/wonderboom_front'
-abbr -a -- cdh 'cd /Users/cmcgraw/src/hive'
-abbr -a -- cdmq 'cd /Users/cmcgraw/src/lodgenet-mq/'
-abbr -a -- cds 'cd /Users/cmcgraw/src/'
+abbr -a -- cdb 'cd ~/src/wonderboom_back'
+abbr -a -- cdf 'cd ~/src/wonderboom_front'
+abbr -a -- cdh 'cd ~/src/hive'
+abbr -a -- cdmq 'cd ~/src/lodgenet-mq/'
+abbr -a -- cds 'cd ~/src/'
 abbr -a -- dcl 'docker compose logs -f --tail=100'
 abbr -a -- doc 'docker compose'
 abbr -a -- fig 'docker compose'
