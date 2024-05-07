@@ -17,7 +17,21 @@ status is-login; and pyenv init --path | source
 pyenv init - | source
 
 abbr -a -- apptest 'poetry run pytest -m "not integration" --disable-warnings'
+abbr -a -- cdb 'cd /Users/cmcgraw/src/wonderboom_back'
+abbr -a -- cdf 'cd /Users/cmcgraw/src/wonderboom_front'
+abbr -a -- cdh 'cd /Users/cmcgraw/src/hive'
+abbr -a -- cdmq 'cd /Users/cmcgraw/src/lodgenet-mq/'
+abbr -a -- cds 'cd /Users/cmcgraw/src/'
+abbr -a -- dcl 'docker compose logs -f --tail=100'
+abbr -a -- doc 'docker compose'
+abbr -a -- fig 'docker compose'
+abbr -a -- gbr 'git branch'
+abbr -a -- gco 'git checkout'
+abbr -a -- gdi 'git diff --ignore-submodules'
+abbr -a -- gst 'git status'
 abbr -a -- hsatest 'poetry run pytest cloud_deploy site_appliance rpm_assets/support_files -m "not integration" --disable-warnings'
+abbr -a -- pull 'git pull'
+abbr -a -- push 'git push'
 abbr -a -- pv 'poetry run nvim'
 
 # Created by `pipx` on 2022-05-16 16:52:50
