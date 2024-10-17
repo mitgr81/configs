@@ -246,12 +246,18 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	command = 'lua vim.lsp.buf.format({async = false})',
 })
+vim.api.nvim_create_autocmd("BufWritePre", {
+	desc = "Strip trailing spaces",
+	group = misc_augroup,
+	pattern = "*",
+	command = "%s/\\s\\+$//e",
+})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	buffer = buffer,
 	pattern = "*",
 	callback = function()
-		local skippables = { "markdown", "toml", "yaml" }
+		local skippables = { "markdown", "toml", "yaml", "html" }
 		for _, skippable in pairs(skippables) do
 			if vim.bo.filetype == skippable then
 				return
