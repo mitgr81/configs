@@ -8,13 +8,12 @@ set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info"
 set -x NEWWAVE_DEV_S3_PUSHER_AWS_SECRET_ACCESS_KEY 3svAC+CfcHh1I0ZWyakVeil5w3LuKfR6dyqhA5gg
 set -x LDFLAGS "-L/usr/local/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib"
 set -g fish_user_paths "/opt/homebrew/bin/gettext/bin" $fish_user_paths
+
 # for at-home work
 set -x WDS_CONFIG_PUBLIC_HOST theramore.ct.lodgenet.com
 set -x WDS_PUBLIC_HOST theramore.ct.lodgenet.com
 set -x BASE_URI http://theramore.ct.lodgenet.com:8005
 # end for at-home work
-status is-login; and pyenv init --path | source
-pyenv init - | source
 
 abbr -a -- apptest 'poetry run pytest -m "not integration" --disable-warnings'
 abbr -a -- cdb 'cd ~/src/wonderboom_back'
@@ -33,8 +32,13 @@ abbr -a -- hsatest 'poetry run pytest cloud_deploy site_appliance rpm_assets/sup
 abbr -a -- pull 'git pull'
 abbr -a -- push 'git push'
 abbr -a -- pv 'poetry run nvim'
+abbr -a -- scm 'printf "\nexport TERM=xterm; resize\n\n"; telnet scm.lodgenet.com'
 
 # Created by `pipx` on 2022-05-16 16:52:50
 set PATH $PATH /$HOME/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.config/op/plugins.sh
+source ~/.iterm2_shell_integration.fish
+
+status is-login; and pyenv init --path | source
+pyenv init - | source
