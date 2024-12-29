@@ -1,0 +1,14 @@
+theme=catppuccin-mocha
+background-opacity=0.9
+background-blur-radius=20
+unfocused-split-opacity=0.35
+copy-on-select=true
+font-feature=-calt
+font-family=""
+font-family="JetBrainsMono Nerd Font Mono"
+font-size=15
+window-save-state=always
+mouse-hide-while-typing=true
+# custom-shader=/Users/cmcgraw/.config/ghostty/shaders/filmgrain.glsl
+custom-shader=/Users/cmcgraw/.config/ghostty/shaders/scanline.glsl
+custom-shader-animation=true
