@@ -1,14 +1,19 @@
 theme=catppuccin-mocha
-background-opacity=0.9
+# window-theme=light
 background-blur-radius=20
-unfocused-split-opacity=0.35
+background-opacity=0.9
 copy-on-select=true
-font-feature=-calt
 font-family=""
 font-family="JetBrainsMono Nerd Font Mono"
+font-feature=-calt
 font-size=15
-window-save-state=always
 mouse-hide-while-typing=true
+unfocused-split-opacity=0.35
+window-save-state=always
 # custom-shader=/Users/cmcgraw/.config/ghostty/shaders/filmgrain.glsl
-custom-shader=/Users/cmcgraw/.config/ghostty/shaders/scanline.glsl
-custom-shader-animation=true
+# See https://github.com/m-ahdal/ghostty-shaders/tree/main
+custom-shader=/Users/cmcgraw/.config/ghostty/shaders/underwater.glsl
+# custom-shader-animation=true
+
+# sholudn't have to set this, but seems to help with SSH
+term=xterm

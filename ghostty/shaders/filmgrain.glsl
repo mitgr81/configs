@@ -22,7 +22,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec3 blotchEffect = mix(vec3(1.0), vec3(0.4, 0.3, 0.3), blotch * 0.8); // Dark reddish blotches
 
     // --- Vignette Effect ---
-    float vignette = smoothstep(0.8, 0.4, length(uv - 0.5));
+    float vignette = smoothstep(0.9, 0.2, length(uv - 0.5));
+    // float vignette = smoothstep(0.8, 0.4, length(uv - 0.5));
     vec3 vignetteEffect = grainEffect * vignette;
 
     // Combine effects
