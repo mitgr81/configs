@@ -24,38 +24,43 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 end)
 
 require("ibl").setup({
-	indent = { highlight = highlight, char = '┊', tab_char = "▎" },
+	indent = {
+		highlight = highlight,
+		char = '┊',
+		-- char = "│",
+		tab_char = "▎",
+	},
 	exclude = { filetypes = { "dashboard" } },
 })
 
 vim.g["test#python#runner"] = 'pytest'
 -- vim.g["test#python#pytest#executable"] = 'poetry run pytest -m "not integration" --disable-warnings '
 -- END vim-test configs
-require('dashboard').setup({
-	theme = 'hyper',
-	config = {
-		week_header = {
-			enable = true,
-		},
-		shortcut = {
-			{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
-			{
-				icon = ' ',
-				icon_hl = '@variable',
-				desc = 'Files',
-				group = 'Label',
-				action = 'Telescope find_files',
-				key = 'f',
-			},
-			{
-				desc = ' Projects',
-				group = 'Label',
-				action = 'Telescope project',
-				key = 'p',
-			},
-		},
-	},
-})
+-- require('dashboard').setup({
+-- 	theme = 'hyper',
+-- 	config = {
+-- 		week_header = {
+-- 			enable = true,
+-- 		},
+-- 		shortcut = {
+-- 			{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+-- 			{
+-- 				icon = ' ',
+-- 				icon_hl = '@variable',
+-- 				desc = 'Files',
+-- 				group = 'Label',
+-- 				action = 'Telescope find_files',
+-- 				key = 'f',
+-- 			},
+-- 			{
+-- 				desc = ' Projects',
+-- 				group = 'Label',
+-- 				action = 'Telescope project',
+-- 				key = 'p',
+-- 			},
+-- 		},
+-- 	},
+-- })
 local lspkind = require('lspkind')
 require("cmp").setup({
 	formatting = {

@@ -1,19 +1,29 @@
-theme=catppuccin-mocha
-# window-theme=light
-background-blur-radius=20
-background-opacity=0.9
-copy-on-select=true
-font-family=""
-font-family="JetBrainsMono Nerd Font Mono"
-font-feature=-calt
-font-size=15
-mouse-hide-while-typing=true
-unfocused-split-opacity=0.35
-window-save-state=always
-# custom-shader=/Users/cmcgraw/.config/ghostty/shaders/filmgrain.glsl
-# See https://github.com/m-ahdal/ghostty-shaders/tree/main
-custom-shader=/Users/cmcgraw/.config/ghostty/shaders/underwater.glsl
-# custom-shader-animation=true
+## GENERAL
+copy-on-select = true
+focus-follows-mouse = true
+mouse-hide-while-typing = true
+shell-integration = fish
+# term = xterm
 
-# sholudn't have to set this, but seems to help with SSH
-term=xterm
+## WINDOW STYLE AND BEHAVIOR
+background-blur-radius = 20
+background-opacity = 0.9
+theme = catppuccin-mocha
+unfocused-split-opacity = 0.35
+window-save-state = always
+window-step-resize = true
+window-height = 44
+window-width = 190
+
+## TEXT RENDERING
+bold-is-bright = true
+font-family = "JetBrainsMono Nerd Font Mono"
+# TODO: Try out Hack
+font-feature = -calt
+font-size = 15
+font-thicken = true
+
+## SHADERS
+# See https://github.com/m-ahdal/ghostty-shaders/tree/main
+# custom-shader = /Users/cmcgraw/.config/ghostty/shaders/underwater.glsl
+# custom-shader-animation = true
