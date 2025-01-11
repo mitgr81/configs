@@ -25,5 +25,13 @@ font-thicken = true
 
 ## SHADERS
 # See https://github.com/m-ahdal/ghostty-shaders/tree/main
-# custom-shader = /Users/cmcgraw/.config/ghostty/shaders/underwater.glsl
+# custom-shader = shaders/sparks-from-fire.glsl
+# custom-shader = shaders/bloom.glsl
+# custom-shader = shaders/cube.glsl
+# custom-shader = shaders/dither.glsl
+# custom-shader = shaders/starfield-colors.glsl
+# custom-shader = shaders/starfield.glsl
+# custom-shader = shaders/tft.glsl
+# custom-shader = shaders/underwater.glsl
+# custom-shader = shaders/water.glsl
 # custom-shader-animation = true

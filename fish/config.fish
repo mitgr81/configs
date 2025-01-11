@@ -38,7 +38,6 @@ abbr -a -- scm 'printf "\nexport TERM=xterm; resize\n\n"; telnet scm.lodgenet.co
 set PATH $PATH /$HOME/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.config/op/plugins.sh
-source ~/.iterm2_shell_integration.fish
 
 status is-login; and pyenv init --path | source
 pyenv init - | source

@@ -40,3 +40,6 @@
 [submodule "vim/pyflakes-pathogen"]
 	path = vim/pyflakes-pathogen
 	url = https://github.com/mitechie/pyflakes-pathogen.git
+[submodule "ghostty/shaders"]
+	path = ghostty/shaders
+	url = https://github.com/m-ahdal/ghostty-shaders.git
