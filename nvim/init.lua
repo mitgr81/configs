@@ -107,7 +107,6 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -123,6 +122,9 @@ require('lazy').setup({
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
+  },
+  {
+    "xzbdmw/colorful-menu.nvim",
   },
   {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
@@ -237,11 +239,13 @@ require('lazy').setup({
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      presets = { lsp_doc_border = true },
+    },
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-    }
+    },
   },
   {
     -- to work around issue with noice - https://github.com/folke/noice.nvim/issues/938
@@ -472,22 +476,16 @@ local servers = {
   -- basedpyright = { filetypes = { 'python' } },
   -- pylance = {},
   rust_analyzer = {},
-  eslint = {
-    -- code_actions = {
-    --   enable = true,
-    --   apply_on_save = {
-    --     enable = true,
-    --     types = { "directive", "problem", "suggestion", "layout" },
-    --   },
-    -- },
-  },
-  -- tsserver = {
-  --   javascript = {
-  --     format = {
-  --       enable = false,
-  --     }
+  -- eslint = {  -- Eslint config is now done in a custom plugin where we can set a custom node path
+  -- code_actions = {
+  --   enable = true,
+  --   apply_on_save = {
+  --     enable = true,
+  --     types = { "directive", "problem", "suggestion", "layout" },
   --   },
   -- },
+  -- },
+  ts_ls = {},
   marksman = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   lua_ls = {
@@ -530,6 +528,7 @@ mason_lspconfig.setup_handlers {
         },
       },
     }
+
     -- require('lspconfig').basedpyright.setup {
     --   settings = {
     --     pyright = {
@@ -562,9 +561,23 @@ vim.defer_fn(function()
         luasnip.lsp_expand(args.body)
       end,
     },
+    formatting = {
+      format = function(entry, vim_item)
+        local highlights_info = require("colorful-menu").cmp_highlights(entry)
+
+        -- if highlight_info==nil, which means missing ts parser, let's fallback to use default `vim_item.abbr`.
+        -- What this plugin offers is two fields: `vim_item.abbr_hl_group` and `vim_item.abbr`.
+        if highlights_info ~= nil then
+          vim_item.abbr_hl_group = highlights_info.highlights
+          vim_item.abbr = highlights_info.text
+        end
+
+        return vim_item
+      end,
+    },
     mapping = cmp.mapping.preset.insert {
-      ['<C-n>'] = cmp.mapping.select_next_item(),
-      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<C-j>'] = cmp.mapping.select_next_item(),
+      ['<C-k>'] = cmp.mapping.select_prev_item(),
       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete {},
@@ -594,6 +607,10 @@ vim.defer_fn(function()
     sources = {
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
+    },
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
   }
 end, 0)

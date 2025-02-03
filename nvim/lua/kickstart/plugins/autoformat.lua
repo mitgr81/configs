@@ -49,6 +49,9 @@ return {
         if client.name == 'tsserver' then
           return
         end
+        if client.name == 'ts_ls' then
+          return
+        end
 
         -- Create an autocmd that will run *before* we save the buffer.
         --  Run the formatting command for the LSP that has just attached.
