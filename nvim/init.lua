@@ -424,6 +424,7 @@ local on_attach = function(_, bufnr)
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]efactor: re[n]ame')
   nmap('<leader>ra', vim.lsp.buf.code_action, '[R]efactor: Code [A]ction')
+  nmap('<leader>ca', vim.lsp.buf.code_action, 'Refactor: [C]ode [A]ction')
 
 
   -- See `:help K` for why this keymap
@@ -476,15 +477,14 @@ local servers = {
   -- basedpyright = { filetypes = { 'python' } },
   -- pylance = {},
   rust_analyzer = {},
-  -- eslint = {  -- Eslint config is now done in a custom plugin where we can set a custom node path
-  -- code_actions = {
-  --   enable = true,
-  --   apply_on_save = {
-  --     enable = true,
-  --     types = { "directive", "problem", "suggestion", "layout" },
-  --   },
-  -- },
-  -- },
+  eslint = {
+    code_actions = {
+      enable = true,
+      apply_on_save = {
+        enable = true,
+      },
+    },
+  },
   ts_ls = {},
   marksman = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },

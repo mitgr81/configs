@@ -16,6 +16,8 @@ window-step-resize = true
 window-height = 44
 window-width = 190
 macos-titlebar-style=tabs
+# See https://github.com/ghostty-org/ghostty/pull/5696 for visual
+macos-icon = xray
 
 ## TEXT RENDERING
 bold-is-bright = true
