@@ -290,7 +290,14 @@ require("lualine").setup({
 				'filename',
 				path = 2 -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = abs path with ~ for home
 			}
-		}
+		},
+		lualine_x = {
+			{
+				require("noice").api.statusline.mode.get,
+				cond = require("noice").api.statusline.mode.has,
+				color = { fg = "#ff9e64" },
+			}
+		},
 	}
 })
 
