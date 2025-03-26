@@ -252,6 +252,7 @@ require('lazy').setup({
     'stevearc/dressing.nvim',
     opts = {},
   },
+  { "HiPhish/jinja.vim" },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -500,6 +501,16 @@ local servers = {
   },
   yamlls = {},
   cucumber_language_server = {},
+  jinja_lsp = {
+    filetypes = {
+      'jinja2',
+      'jinja',
+      'xml.jinja',
+      'html.jinja',
+      'json.jinja',
+      'plain.jinja',
+    }
+  },
 }
 
 -- Setup neovim lua configuration

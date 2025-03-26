@@ -303,3 +303,12 @@ require("lualine").setup({
 
 -- Python stuff
 vim.g.python3_host_prog = '/Users/cmcgraw/.virtualenvs/py3nvim/bin/python'
+
+vim.filetype.add({
+	extension = {
+		j2xml = 'xml.jinja',
+		j2hmtl = 'xml.jinja',
+		j2plain = 'plain.jinja',
+		j2json = 'json.jinja',
+	}
+})
