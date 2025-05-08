@@ -96,12 +96,12 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      { "mason-org/mason.nvim",           version = "^2.0.0" },
+      { "mason-org/mason-lspconfig.nvim", version = "^2.0.0" },
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',              tag = 'legacy',    opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -521,38 +521,38 @@ local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
-}
-
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-    require('lspconfig').pyright.setup {
-      settings = {
-        pyright = {
-          -- Using Ruff's import organizer
-          disableOrganizeImports = true,
+  automatic_installation = false,
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup {
+        -- capabilities = capabilities,
+        on_attach = on_attach,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
+      require('lspconfig').pyright.setup {
+        settings = {
+          pyright = {
+            -- Using Ruff's import organizer
+            disableOrganizeImports = true,
+          },
         },
-      },
-    }
+      }
 
-    -- require('lspconfig').basedpyright.setup {
-    --   settings = {
-    --     pyright = {
-    --       -- Using Ruff's import organizer
-    --       disableOrganizeImports = true,
-    --     },
-    --     basedpyright = {
-    --       -- Using Ruff's import organizer
-    --       disableOrganizeImports = true,
-    --     },
-    --   },
-    -- }
-  end,
+      -- require('lspconfig').basedpyright.setup {
+      --   settings = {
+      --     pyright = {
+      --       -- Using Ruff's import organizer
+      --       disableOrganizeImports = true,
+      --     },
+      --     basedpyright = {
+      --       -- Using Ruff's import organizer
+      --       disableOrganizeImports = true,
+      --     },
+      --   },
+      -- }
+    end,
+  }
 }
 
 vim.defer_fn(function()

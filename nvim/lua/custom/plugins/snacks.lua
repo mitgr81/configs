@@ -149,6 +149,7 @@ return {
         { "gI",              function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
         { "gy",              function() Snacks.picker.lsp_type_definitions() end,                    desc = "Goto T[y]pe Definition" },
         { "<leader>ss",      function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
+        { "<leader>fs",      function() Snacks.picker.lsp_symbols() end,                             desc = "[F]ind [S]ymbols" },
 
     },
     init = function()
