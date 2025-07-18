@@ -474,7 +474,9 @@ local servers = {
     }
   },
   -- jedi_language_server = { filetypes = { 'python' } },
-  pyright = { filetypes = { 'python' } },
+  -- pyright = { filetypes = { 'python' } },
+  pyrefly = { filetypes = { 'python' } },
+  ty = { filetypes = { 'python' } },
   -- basedpyright = { filetypes = { 'python' } },
   -- pylance = {},
   rust_analyzer = {},
@@ -530,14 +532,14 @@ mason_lspconfig.setup {
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes,
       }
-      require('lspconfig').pyright.setup {
-        settings = {
-          pyright = {
-            -- Using Ruff's import organizer
-            disableOrganizeImports = true,
-          },
-        },
-      }
+      -- require('lspconfig').pyright.setup {
+      --   settings = {
+      --     pyright = {
+      --       -- Using Ruff's import organizer
+      --       disableOrganizeImports = true,
+      --     },
+      --   },
+      -- }
 
       -- require('lspconfig').basedpyright.setup {
       --   settings = {
