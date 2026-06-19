@@ -19,6 +19,27 @@ vim.g.have_nerd_font = true
 if vim.env.PROF then
   local snacks = vim.fn.stdpath 'data' .. '/site/pack/core/opt/snacks.nvim'
   vim.opt.rtp:append(snacks)
+
+  -- Work around an upstream snacks profiler bug: some Neovim builtins (e.g.
+  -- `vim.F`) report a chunk source of "@vim/F" with no `.lua` extension, so
+  -- profiler/loc.ts_locs() tries to readfile a path that doesn't exist and
+  -- throws E484. Guard it: append `.lua` when the bare path is missing, and
+  -- return nothing if the file still can't be found. Harmless once fixed
+  -- upstream. https://github.com/folke/snacks.nvim (profiler/loc.lua)
+  local ok, loc = pcall(require, 'snacks.profiler.loc')
+  if ok and loc.ts_locs then
+    local orig = loc.ts_locs
+    loc.ts_locs = function(file)
+      if vim.uv.fs_stat(file) == nil and vim.uv.fs_stat(file .. '.lua') then
+        file = file .. '.lua'
+      end
+      if vim.uv.fs_stat(file) == nil then
+        return {}
+      end
+      return orig(file)
+    end
+  end
+
   require('snacks.profiler').startup {
     startup = { event = 'VimEnter' }, -- stop profiling on this event
   }
