@@ -32,7 +32,17 @@ require('snacks').setup {
         ttl = 5 * 60,
         indent = 3,
       },
-      { section = 'startup' },
+      -- snacks' built-in "startup" section calls require('lazy.stats'), which
+      -- no longer exists under vim.pack. Show the vim.pack plugin count instead.
+      -- The whole section is a function (resolved by snacks); `text` must be a
+      -- plain list, so the dynamic count is computed inside the function.
+      function()
+        return {
+          align = 'center',
+          padding = 1,
+          text = { { '⚡ ' .. #vim.pack.get() .. ' plugins loaded', hl = 'footer' } },
+        }
+      end,
     },
   },
   explorer = {
