@@ -1,4 +1,4 @@
-require('colorizer').setup()
+-- NOTE: colorizer is set up (deferred) in plugin/editing.lua.
 -- See https://github.com/lukas-reineke/indent-blankline.nvim for more
 local highlight = {
   'RainbowYellow',
@@ -36,12 +36,9 @@ require('ibl').setup {
 vim.g['test#python#runner'] = 'pytest'
 -- vim.g["test#python#pytest#executable"] = 'poetry run pytest -m "not integration" --disable-warnings '
 -- END vim-test configs
-local lspkind = require 'lspkind'
-require('cmp').setup {
-  formatting = {
-    format = lspkind.cmp_format(),
-  },
-}
+-- NOTE: cmp is configured in plugin/completion.lua (colorful-menu formatting).
+-- The previous require('cmp').setup{ ... lspkind ... } here was dead code —
+-- completion.lua's deferred setup ran later and fully replaced it.
 -- cmp setup from nvchad
 --
 -- local cmp = require "cmp"
@@ -284,6 +281,11 @@ vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
 require('lualine').setup {
+  options = {
+    --    icons_enabled = false,
+    theme = 'tokyonight',
+    -- section_separators = { left = '', right = '' },
+  },
   sections = {
     lualine_c = {
       {

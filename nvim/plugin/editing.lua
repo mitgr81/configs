@@ -10,6 +10,12 @@ vim.pack.add {
 
 require('mini.icons').setup()
 require('Comment').setup()
-require('colorizer').setup()
-require('ibl').setup {}
+
+-- colorizer is ~20ms to load + set up; defer it a frame so it lands just after
+-- the first paint instead of on the startup critical path.
+vim.schedule(function()
+  require('colorizer').setup()
+end)
+
+-- ibl is configured in custom/configs/settings.lua (rainbow highlights + hooks).
 -- rainbow-delimiters and vim-sleuth need no setup call.

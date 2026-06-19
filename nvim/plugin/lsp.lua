@@ -8,8 +8,11 @@ vim.pack.add {
   { src = 'https://github.com/j-hui/fidget.nvim', version = 'legacy' },
 }
 
-require('mason').setup()
 require('fidget').setup {}
+-- mason.setup() is cheap (~10ms) AND prepends mason's bin/ to PATH, which
+-- vim.lsp.enable relies on to find server binaries — so it must run eagerly.
+-- (The expensive registry/ensure_installed work is deferred below.)
+require('mason').setup()
 
 -- This runs when an LSP attaches to a buffer. Keymaps preserved verbatim.
 local on_attach = function(_, bufnr)
@@ -95,11 +98,19 @@ local servers = {
   'jinja_lsp',
 }
 
-require('mason-lspconfig').setup {
-  ensure_installed = servers,
-  automatic_installation = false,
-  -- We enable servers explicitly below, so don't let mason-lspconfig also do it.
-  automatic_enable = false,
-}
-
+-- Enable servers now (cheap — just registers configs; already-installed
+-- servers attach immediately).
 vim.lsp.enable(servers)
+
+-- Defer mason-lspconfig: its setup loads mason-registry / mason-core.async /
+-- the GitHub source (~35ms) just to check ensure_installed. None of that is
+-- needed for already-installed servers to attach (mason.setup above already
+-- put their binaries on PATH); missing servers just install a moment later.
+vim.schedule(function()
+  require('mason-lspconfig').setup {
+    ensure_installed = servers,
+    automatic_installation = false,
+    -- We enable servers explicitly above, so don't let mason-lspconfig also do it.
+    automatic_enable = false,
+  }
+end)
