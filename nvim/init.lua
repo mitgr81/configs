@@ -45,15 +45,15 @@ vim.g.maplocalleader = ' '
 if vim.env.PROF then
   -- example for lazy.nvim
   -- change this to the correct path for your plugin manager
-  local snacks = vim.fn.stdpath("data") .. "/lazy/snacks.nvim"
+  local snacks = vim.fn.stdpath 'data' .. '/lazy/snacks.nvim'
   vim.opt.rtp:append(snacks)
-  require("snacks.profiler").startup({
+  require('snacks.profiler').startup {
     startup = {
-      event = "VimEnter", -- stop profiler on this event. Defaults to `VimEnter`
+      event = 'VimEnter', -- stop profiler on this event. Defaults to `VimEnter`
       -- event = "UIEnter",
       -- event = "VeryLazy",
     },
-  })
+  }
 end
 
 vim.g.have_nerd_font = true
@@ -96,12 +96,12 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      { "mason-org/mason.nvim",           version = "^2.0.0" },
-      { "mason-org/mason-lspconfig.nvim", version = "^2.0.0" },
+      { 'mason-org/mason.nvim', version = '^2.0.0' },
+      { 'mason-org/mason-lspconfig.nvim', version = '^2.0.0' },
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',              tag = 'legacy',    opts = {} },
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -124,9 +124,9 @@ require('lazy').setup({
     },
   },
   {
-    "xzbdmw/colorful-menu.nvim",
+    'xzbdmw/colorful-menu.nvim',
   },
-  {                     -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
@@ -140,11 +140,11 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk',   mode = { 'n', 'v' } },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       }
     end,
   },
-  { 'echasnovski/mini.icons',         version = false },
+  { 'echasnovski/mini.icons', version = false },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -166,8 +166,9 @@ require('lazy').setup({
         local gs = package.loaded.gitsigns
         vim.keymap.set('n', '<leader>hp', gs.preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
         vim.keymap.set('n', '<leader>hs', gs.stage_hunk, { buffer = bufnr, desc = 'Stage git hunk' })
-        vim.keymap.set('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end,
-          { desc = "Stage git hunk" })
+        vim.keymap.set('v', '<leader>hs', function()
+          gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+        end, { desc = 'Stage git hunk' })
 
         -- don't override the built-in and fugitive keymaps
         vim.keymap.set({ 'n', 'v' }, ']c', function()
@@ -222,11 +223,11 @@ require('lazy').setup({
     main = 'ibl',
     opts = {},
   },
-  { "HiPhish/rainbow-delimiters.nvim" },
-  { "NvChad/nvim-colorizer.lua" },
+  { 'HiPhish/rainbow-delimiters.nvim' },
+  { 'NvChad/nvim-colorizer.lua' },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',          opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   {
     -- Highlight, edit, and navigate code
@@ -237,14 +238,14 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   {
-    "folke/noice.nvim",
-    event = "VeryLazy",
+    'folke/noice.nvim',
+    event = 'VeryLazy',
     opts = {
       presets = { lsp_doc_border = true },
     },
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
     },
   },
   {
@@ -252,7 +253,7 @@ require('lazy').setup({
     'stevearc/dressing.nvim',
     opts = {},
   },
-  { "HiPhish/jinja.vim" },
+  { 'HiPhish/jinja.vim' },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -336,8 +337,23 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash',
-      'dockerfile', 'markdown', 'toml', 'yaml', 'rst' },
+    ensure_installed = {
+      'go',
+      'lua',
+      'python',
+      'rust',
+      'tsx',
+      'javascript',
+      'typescript',
+      'vimdoc',
+      'vim',
+      'bash',
+      'dockerfile',
+      'markdown',
+      'toml',
+      'yaml',
+      'rst',
+    },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -427,7 +443,6 @@ local on_attach = function(_, bufnr)
   nmap('<leader>ra', vim.lsp.buf.code_action, '[R]efactor: Code [A]ction')
   nmap('<leader>ca', vim.lsp.buf.code_action, 'Refactor: [C]ode [A]ction')
 
-
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
@@ -468,10 +483,10 @@ local servers = {
     init_options = {
       settings = {
         -- Any extra CLI arguments for `ruff` go here.
-        run = "onSave",
+        run = 'onSave',
         args = { '--line-length=120' },
-      }
-    }
+      },
+    },
   },
   -- jedi_language_server = { filetypes = { 'python' } },
   -- pyright = { filetypes = { 'python' } },
@@ -481,6 +496,11 @@ local servers = {
   -- pylance = {},
   rust_analyzer = {},
   eslint = {
+    filetypes = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+    },
     code_actions = {
       enable = true,
       apply_on_save = {
@@ -488,7 +508,16 @@ local servers = {
       },
     },
   },
-  ts_ls = {},
+  ts_ls = { enabled = false },
+  vtsls = {
+    -- explicitly add default filetypes, so that we can extend
+    -- them in related extras
+    filetypes = {
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+    },
+  },
   marksman = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   lua_ls = {
@@ -511,7 +540,7 @@ local servers = {
       'html.jinja',
       'json.jinja',
       'plain.jinja',
-    }
+    },
   },
 }
 
@@ -554,7 +583,7 @@ mason_lspconfig.setup {
       --   },
       -- }
     end,
-  }
+  },
 }
 
 vim.defer_fn(function()
@@ -576,7 +605,7 @@ vim.defer_fn(function()
     },
     formatting = {
       format = function(entry, vim_item)
-        local highlights_info = require("colorful-menu").cmp_highlights(entry)
+        local highlights_info = require('colorful-menu').cmp_highlights(entry)
 
         -- if highlight_info==nil, which means missing ts parser, let's fallback to use default `vim_item.abbr`.
         -- What this plugin offers is two fields: `vim_item.abbr_hl_group` and `vim_item.abbr`.

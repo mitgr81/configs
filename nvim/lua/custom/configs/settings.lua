@@ -1,47 +1,47 @@
-require("colorizer").setup()
+require('colorizer').setup()
 -- See https://github.com/lukas-reineke/indent-blankline.nvim for more
 local highlight = {
-	"RainbowYellow",
-	"RainbowBlue",
-	"RainbowOrange",
-	"RainbowGreen",
-	"RainbowViolet",
-	"RainbowCyan",
-	"RainbowRed",
+  'RainbowYellow',
+  'RainbowBlue',
+  'RainbowOrange',
+  'RainbowGreen',
+  'RainbowViolet',
+  'RainbowCyan',
+  'RainbowRed',
 }
 
-local hooks = require "ibl.hooks"
+local hooks = require 'ibl.hooks'
 -- create the highlight groups in the highlight setup hook, so they are reset
 -- every time the colorscheme changes
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-	vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#1d4656" })
-	vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#426183" })
-	vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#364635" })
-	vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#c49b5a" })
-	vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-	vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#413959" })
-	vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+  vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#1d4656' })
+  vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#426183' })
+  vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#364635' })
+  vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#c49b5a' })
+  vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#E06C75' })
+  vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#413959' })
+  vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#E5C07B' })
 end)
 
-require("ibl").setup({
-	indent = {
-		highlight = highlight,
-		char = '┊',
-		-- char = "│",
-		tab_char = "▎",
-	},
-	exclude = { filetypes = { "dashboard" } },
-})
+require('ibl').setup {
+  indent = {
+    highlight = highlight,
+    char = '┊',
+    -- char = "│",
+    tab_char = '▎',
+  },
+  exclude = { filetypes = { 'dashboard' } },
+}
 
-vim.g["test#python#runner"] = 'pytest'
+vim.g['test#python#runner'] = 'pytest'
 -- vim.g["test#python#pytest#executable"] = 'poetry run pytest -m "not integration" --disable-warnings '
 -- END vim-test configs
-local lspkind = require('lspkind')
-require("cmp").setup({
-	formatting = {
-		format = lspkind.cmp_format(),
-	},
-})
+local lspkind = require 'lspkind'
+require('cmp').setup {
+  formatting = {
+    format = lspkind.cmp_format(),
+  },
+}
 -- cmp setup from nvchad
 --
 -- local cmp = require "cmp"
@@ -194,71 +194,71 @@ require("cmp").setup({
 -- 	})
 -- end, 10)
 
-local ls = require("luasnip")
+local ls = require 'luasnip'
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
-local p = require("luasnip.extras").partial
-ls.add_snippets("markdown", {
-	s("wle", {
-		p(os.date, "# %Y-%m-%d (%A):"),
-		t({ "", "" }),
-		t({ "* In: " }),
-		i(1),
-		t({ "", "* Out:", "" }),
-		t({ "* Lunch:", "" }),
-		t({ "* Timesheet Hours:", "" }),
-		t({ "* Morning:", "" }),
-		t({ "    * ", }),
-		i(2),
-		t({ "", "* Afternoon:", "" }),
-		t({ "    * ", }),
-		i(3),
-		t({ "", "" }),
-	}),
+local p = require('luasnip.extras').partial
+ls.add_snippets('markdown', {
+  s('wle', {
+    p(os.date, '# %Y-%m-%d (%A):'),
+    t { '', '' },
+    t { '* In: ' },
+    i(1),
+    t { '', '* Out:', '' },
+    t { '* Lunch:', '' },
+    t { '* Timesheet Hours:', '' },
+    t { '* Morning:', '' },
+    t { '    * ' },
+    i(2),
+    t { '', '* Afternoon:', '' },
+    t { '    * ' },
+    i(3),
+    t { '', '' },
+  }),
 })
 
-local misc_augroup = vim.api.nvim_create_augroup("misc", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePre", {
-	-- Adapted from: vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
-	desc = "Run LSP formatter on Write",
-	group = misc_augroup,
-	pattern = "*",
-	command = 'lua vim.lsp.buf.format({async = false})',
+local misc_augroup = vim.api.nvim_create_augroup('misc', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  -- Adapted from: vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
+  desc = 'Run LSP formatter on Write',
+  group = misc_augroup,
+  pattern = '*',
+  command = 'lua vim.lsp.buf.format({async = false})',
 })
-vim.api.nvim_create_autocmd("BufWritePre", {
-	desc = "Strip trailing spaces",
-	group = misc_augroup,
-	pattern = "*",
-	command = "%s/\\s\\+$//e",
-})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   desc = 'Strip trailing spaces',
+--   group = misc_augroup,
+--   pattern = '*',
+--   command = '%s/\\s\\+$//e',
+-- })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-	buffer = buffer,
-	pattern = "*",
-	callback = function()
-		local skippables = { "markdown", "toml", "yaml", "html" }
-		for _, skippable in pairs(skippables) do
-			if vim.bo.filetype == skippable then
-				return
-			end
-		end
-		vim.lsp.buf.code_action({
-			context = { only = { "source.organizeImports" } },
-			apply = true,
-		})
-		vim.wait(100)
-	end,
+vim.api.nvim_create_autocmd('BufWritePre', {
+  buffer = buffer,
+  pattern = '*',
+  callback = function()
+    local skippables = { 'markdown', 'toml', 'yaml', 'html' }
+    for _, skippable in pairs(skippables) do
+      if vim.bo.filetype == skippable then
+        return
+      end
+    end
+    vim.lsp.buf.code_action {
+      context = { only = { 'source.organizeImports' } },
+      apply = true,
+    }
+    vim.wait(100)
+  end,
 })
 
 vim.api.nvim_create_autocmd('BufReadPost', {
-	desc = 'Open file at the last position it was edited earlier',
-	group = misc_augroup,
-	pattern = '*',
-	command = 'silent! normal! g`"zv'
+  desc = 'Open file at the last position it was edited earlier',
+  group = misc_augroup,
+  pattern = '*',
+  command = 'silent! normal! g`"zv',
 })
 vim.opt.hlsearch = true
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = '120'
 vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
@@ -269,10 +269,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.list = true
-vim.opt.listchars = "tab:┈┈,trail:~,multispace:.,extends:▶,precedes:◀,nbsp:‿"
+vim.opt.listchars = 'tab:┈┈,trail:~,multispace:.,extends:▶,precedes:◀,nbsp:‿'
 vim.opt.cursorline = true
 -- vim.opt.cursorlineopt = "number"
-vim.opt.foldmethod = "indent"
+vim.opt.foldmethod = 'indent'
 vim.opt.foldlevelstart = 99
 
 -- Spelling see https://johncodes.com/posts/2023/02-25-nvim-spell/ and https://neovim.io/doc/user/spell.html
@@ -283,32 +283,32 @@ vim.opt.foldlevelstart = 99
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
-require("lualine").setup({
-	sections = {
-		lualine_c = {
-			{
-				'filename',
-				path = 2 -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = abs path with ~ for home
-			}
-		},
-		lualine_x = {
-			{
-				require("noice").api.statusline.mode.get,
-				cond = require("noice").api.statusline.mode.has,
-				color = { fg = "#ff9e64" },
-			}
-		},
-	}
-})
+require('lualine').setup {
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 2, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = abs path with ~ for home
+      },
+    },
+    lualine_x = {
+      {
+        require('noice').api.statusline.mode.get,
+        cond = require('noice').api.statusline.mode.has,
+        color = { fg = '#ff9e64' },
+      },
+    },
+  },
+}
 
 -- Python stuff
 vim.g.python3_host_prog = '/Users/cmcgraw/.virtualenvs/py3nvim/bin/python'
 
-vim.filetype.add({
-	extension = {
-		j2xml = 'xml.jinja',
-		j2hmtl = 'xml.jinja',
-		j2plain = 'plain.jinja',
-		j2json = 'json.jinja',
-	}
-})
+vim.filetype.add {
+  extension = {
+    j2xml = 'xml.jinja',
+    j2hmtl = 'xml.jinja',
+    j2plain = 'plain.jinja',
+    j2json = 'json.jinja',
+  },
+}
