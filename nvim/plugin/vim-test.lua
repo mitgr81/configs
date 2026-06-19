@@ -3,11 +3,9 @@ vim.pack.add {
   'https://github.com/vim-test/vim-test',
 }
 
-vim.keymap.set('n', '<leader>t', ':TestNearest<CR>', {})
-vim.keymap.set('n', '<leader>T', ':TestFile<CR>', {})
-vim.keymap.set('n', '<leader>a', ':TestSuite<CR>', {})
-vim.keymap.set('n', '<leader>l', ':TestLast<CR>', {})
-vim.keymap.set('n', '<leader>g', ':TestVisit<CR>', {})
+-- Only TestNearest is bound; the other vim-test maps (<leader>T/a/l/g)
+-- collided with the git prefix and treesitter param-swap, so they're dropped.
+vim.keymap.set('n', '<leader>t', ':TestNearest<CR>', { desc = 'Test nearest' })
 
 if vim.fn.exists '$TMUX' ~= 0 then
   vim.cmd "let test#strategy = 'vimux'"

@@ -5,7 +5,6 @@ vim.pack.add {
   'https://github.com/saadparwaiz1/cmp_luasnip',
   'https://github.com/hrsh7th/cmp-nvim-lsp',
   'https://github.com/rafamadriz/friendly-snippets',
-  'https://github.com/onsails/lspkind.nvim',
   'https://github.com/xzbdmw/colorful-menu.nvim',
   'https://github.com/hrsh7th/nvim-cmp',
 }
