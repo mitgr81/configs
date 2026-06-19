@@ -12,6 +12,18 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
+-- [[ Startup profiler ]] (replacement for `:Lazy profile`)
+-- Launch with `PROF=1 nvim` to capture a snacks startup profile. snacks is
+-- added later by plugin/snacks.lua, so we put its install dir on the
+-- runtimepath manually here to load the profiler before plugins run.
+if vim.env.PROF then
+  local snacks = vim.fn.stdpath 'data' .. '/site/pack/core/opt/snacks.nvim'
+  vim.opt.rtp:append(snacks)
+  require('snacks.profiler').startup {
+    startup = { event = 'VimEnter' }, -- stop profiling on this event
+  }
+end
+
 -- [[ Plugin build/update hooks ]]
 -- Must be registered BEFORE any vim.pack.add (which runs in plugin/*.lua).
 -- Rebuild treesitter parsers whenever nvim-treesitter is updated.
